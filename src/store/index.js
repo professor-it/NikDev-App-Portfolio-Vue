@@ -594,7 +594,7 @@ export default createStore({
       socBlock: {
         git: {
           icon: 'fab fa-github',
-          url: 'https://github.com/nikwebdevit'
+          url: 'https://github.com/professor-it'
         },
         inst: {
           icon: 'fab fa-instagram',
