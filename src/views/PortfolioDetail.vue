@@ -180,7 +180,7 @@ $modalcolor: #6c757d;
         display: flex;
         align-items: center;
         img{
-            width: 100%;
+            max-width: 100%;
             max-height: 100%;
             margin: 0 auto;
         }
