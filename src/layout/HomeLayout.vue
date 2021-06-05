@@ -59,6 +59,7 @@
     .main {
         width: 77%;
         margin-left: auto;
+        text-align: center;
     }
     .menu {
         display: none;

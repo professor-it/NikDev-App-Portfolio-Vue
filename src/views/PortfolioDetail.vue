@@ -6,10 +6,12 @@
         <div class="modalHeader">
             <div class="itemHeader">
                 <div class="topHeader">
-                    <i class="far fa-id-card"></i> Сайт:
+                    <i class="far fa-id-card"></i> GitHub:
                 </div>
                 <div class="bottomHeader">
-                    <a :href="modalData.url">Посмотреть</a>
+                    <a :href="modalData.url ? modalData.url : none" target="_blank">
+                        {{modalData.url.length === 0 ? '-' : 'Перейти'}}
+                    </a>
                 </div>
             </div>
             <div class="itemHeader">
@@ -55,7 +57,7 @@
                 </li>
             </ul>
         </div>
-        <div class="modalAdapt">
+        <div class="modalAdapt" v-if="modalData.adaptiveTest">
             <img :src="modalData.adaptiveTest" :alt="modalData.adaptiveTest">
         </div>
         <div class="modalWork">
@@ -146,6 +148,7 @@ $modalcolor: #6c757d;
     justify-content: space-around;
     align-items: center;
     height: 150px;
+    text-align: left;
     .topHeader {
         margin-bottom: 10px;
         font-weight: bold;
@@ -173,8 +176,12 @@ $modalcolor: #6c757d;
     .view{
         text-align: center;
         margin-bottom: 20px;
+        height: 400px;
+        display: flex;
+        align-items: center;
         img{
-            width: 80%;
+            width: 100%;
+            max-height: 100%;
             margin: 0 auto;
         }
     }
@@ -231,10 +238,12 @@ $modalcolor: #6c757d;
     margin-bottom: 15px;
     text-decoration: underline;
     text-align: left;
+    clear: both;
 }
 .modalWork {
     display: flex;
     justify-content: space-evenly;
+    clear: both;
     .work {
         width: 40%;
         margin-right: 20px;
@@ -295,6 +304,18 @@ $modalcolor: #6c757d;
     .exampleMain{
         width: 100%;
         margin-bottom: 40px;
+        .view{
+            text-align: center;
+            margin-bottom: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            img{
+                width: 100%;
+                max-height: 100%;
+                margin: 0 auto;
+            }
+        }
     }
     .taskMain{
         width: 100%;

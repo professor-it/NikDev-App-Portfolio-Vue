@@ -496,7 +496,7 @@ export default createStore({
             },
             url: {
               id: 2,
-              label: 'Ссылка на сайт',
+              label: 'Ссылка на GitHub',
               desc: 'url',
               value: ''
             },
