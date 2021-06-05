@@ -57,6 +57,7 @@
     font-family: $fontmenu;
     font-weight: 600;
     position: relative;
+    text-align: left;
     &-margin {
         margin-right: 20px;
     }

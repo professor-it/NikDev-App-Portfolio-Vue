@@ -80,6 +80,7 @@ $fontmenu: "Comfortaa", sans-serif;
         flex-wrap: wrap;
         justify-content: space-between;
         width: 100%;
+        text-align: left;
     }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
