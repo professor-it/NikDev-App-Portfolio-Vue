@@ -190,7 +190,7 @@ $fonttitle: "Kelly Slab", sans-serif;
     padding-top: 50px;
     .certWrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
         gap: 20px;
         padding: 30px;
         justify-content: center;

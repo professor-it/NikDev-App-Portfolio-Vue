@@ -16,8 +16,11 @@
 <style scoped lang="scss">
     .slider {
         color: #fff;
+        height: 350px;
         img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 10px;
             transition: 0.3s;
             cursor: pointer;

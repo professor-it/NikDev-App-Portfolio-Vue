@@ -623,7 +623,7 @@ export default createStore({
       state.navbar.portfolio.portfolio = request.reverse()
     },
     addCert(state, request) {
-      state.navbar.about.certificates = request.reverse()
+      state.navbar.about.certificates = request
     }
   },
   actions: {
