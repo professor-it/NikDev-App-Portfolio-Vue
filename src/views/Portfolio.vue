@@ -7,7 +7,7 @@
              :key="index"
              @click="portfolioDetail(item)"
         >
-            <div>
+            <div class="wrapperImg">
                 <img :src="item.img" :alt="item.img">
             </div>
             <div class="innerTop">
@@ -15,7 +15,7 @@
                 <div class="skill">{{item.type[0]}}</div>
             </div>
             <div class="innerBottom">
-                <button class="btnMore" @click="modal(index)">Подробнее</button>
+                <button class="btnMore">Подробнее</button>
             </div>
         </div>
         <add-new-el title="Добавить работу" url="/portfolio/add"/>
@@ -66,19 +66,24 @@
 <style scoped lang="scss">
 $fontmenu: "Comfortaa", sans-serif;
 $modalcolor: #6c757d;
+
 .portfolioWrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     justify-content: center;
     gap: 25px;
     .portfolio {
-        height: 400px;
+        height: 350px;
         overflow: hidden;
         position: relative;
         font-family: $fontmenu;
         cursor: pointer;
-        border-radius: 5px 5px 0 0;
+        border-radius: 3px;
         border-bottom: 3px solid #2d9687;
+        .wrapperImg {
+            width: 100%;
+            height: 100%;
+        }
         img {
             width: 100%;
         }

@@ -33,19 +33,19 @@
         </div>
         <div class="exampleMain">
             <div class="view">
-                <img :src="exampleImg || modalData.imgDesc"
-                     :alt="modalData.imgDesc"
+                <img :src="exampleImg"
+                     :alt="exampleImg"
                 >
             </div>
             <div class="choice">
-                <button @click="exampleImgBtn(modalData.imgDesc)">
-                    <i class="fas fa-desktop"></i>
+                <button @click="exampleImgBtn('Desc')">
+                    <i class="fas fa-desktop" :class="[isActive === 'Desc' ? 'activeChoice' : none]"></i>
                 </button>
-                <button @click="exampleImgBtn(modalData.imgTable)">
-                    <i class="fas fa-tablet-alt"></i>
+                <button @click="exampleImgBtn('Table')">
+                    <i class="fas fa-tablet-alt" :class="[isActive === 'Table' ? 'activeChoice' : none]"></i>
                 </button>
-                <button @click="exampleImgBtn(modalData.imgMobile)">
-                    <i class="fas fa-mobile-alt"></i>
+                <button @click="exampleImgBtn('Mobile')">
+                    <i class="fas fa-mobile-alt" :class="[isActive === 'Mobile' ? 'activeChoice' : none]"></i>
                 </button>
             </div>
         </div>
@@ -103,11 +103,13 @@
 			const error = ref(false)
 			const modalData = ref([])
 			const exampleImg = ref('')
+			const isActive = ref('Desc')
 
 			onMounted(async () => {
 				try {
 					await store.dispatch('loadPort')
 					modalData.value = store.state.navbar.portfolio.portfolio.find(e => e.name === id)
+                    exampleImg.value = modalData.value.imgDesc
 					loading.value = false
 				} catch (e) {
 					loading.value = false
@@ -115,8 +117,21 @@
 				}
 			})
 
-			const exampleImgBtn = (i) => {
-				exampleImg.value = i
+			const exampleImgBtn = (val) => {
+				switch (val) {
+					case 'Desc':
+						exampleImg.value = modalData.value.imgDesc
+						isActive.value = 'Desc'
+                        break
+					case 'Table':
+						exampleImg.value = modalData.value.imgTable
+						isActive.value = 'Table'
+						break
+					case 'Mobile':
+						exampleImg.value = modalData.value.imgMobile
+						isActive.value = 'Mobile'
+						break
+				}
 			}
 
 			return {
@@ -124,7 +139,8 @@
 				loading,
 				error,
 				exampleImg,
-				exampleImgBtn
+				exampleImgBtn,
+				isActive
 			}
 		}
 	}
@@ -189,6 +205,9 @@ $modalcolor: #6c757d;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        .activeChoice {
+            color: #2d9687;
+        }
         button{
             width: 45px;
             height: 45px;
