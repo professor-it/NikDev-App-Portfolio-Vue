@@ -6,10 +6,12 @@
         <div v-else class="wrapperContent">
             <div class="modalWrapper">
                 <div class="item" v-for="(e, index) in modalData.item" :key="index">
-                    <div class="title">
-                        {{e.name}}
+                    <div class="itemWrapper">
+                        <div class="title">
+                            {{e.name}}
+                        </div>
+                        <div class="desc">{{e.desc}}</div>
                     </div>
-                    <div class="desc">{{e.desc}}</div>
                 </div>
             </div>
         </div>
@@ -67,20 +69,30 @@ export default {
         margin: 0 20px;
     }
     .modalWrapper{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 40px;
+        display: flex;
+        flex-direction: column;
         color: #fff;
         .item {
             display: flex;
             flex-direction: column;
             height: 100%;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #fff;
+            padding: 40px 0;
+            border-bottom: 1px solid #fff;
             font-family: $fontmenu;
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            .itemWrapper {
+                max-width: 450px;
+                margin: 0 auto;
+            }
         }
         .title {
-            font-size: 20px;
+            font-size: 18px;
+            letter-spacing: 1px;
             font-weight: bold;
             margin: 10px 0;
             text-decoration: underline;
@@ -88,7 +100,7 @@ export default {
         }
         .desc {
             text-align: justify;
-            line-height: 20px;
+            line-height: 18px;
             font-size: 14px;
             color: #999;
         }
