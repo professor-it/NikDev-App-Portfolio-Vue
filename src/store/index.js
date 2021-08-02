@@ -210,7 +210,7 @@ export default createStore({
         portfolio: {
           url: '/portfolio',
           title: 'Портфолио',
-          desc: '"Работает? Не трогай."',
+          desc: '"Работает? Не трогай!"',
           home: true,
           nav: true,
           portfolio: []
