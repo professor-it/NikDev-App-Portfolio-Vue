@@ -538,13 +538,13 @@ export default createStore({
             },
             task: {
               id: 9,
-              label: 'Задача',
+              label: 'Задача (|)',
               desc: 'task',
               value: ''
             },
             color: {
               id: 10,
-              label: 'Цвет - #000000',
+              label: 'Цвет - #000000 (|)',
               desc: 'color',
               value: ''
             }
