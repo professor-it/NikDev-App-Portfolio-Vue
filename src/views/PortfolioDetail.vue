@@ -38,13 +38,13 @@
         >
       </div>
       <div class="choice">
-        <button @click="exampleImgBtn('Desc')">
+        <button v-if="modalData.imgDesc" @click="exampleImgBtn('Desc')">
           <i class="fas fa-desktop" :class="[isActive === 'Desc' ? 'activeChoice' : none]"></i>
         </button>
-        <button @click="exampleImgBtn('Table')">
+        <button v-if="modalData.imgTable" @click="exampleImgBtn('Table')">
           <i class="fas fa-tablet-alt" :class="[isActive === 'Table' ? 'activeChoice' : none]"></i>
         </button>
-        <button @click="exampleImgBtn('Mobile')">
+        <button v-if="modalData.imgMobile" @click="exampleImgBtn('Mobile')">
           <i class="fas fa-mobile-alt" :class="[isActive === 'Mobile' ? 'activeChoice' : none]"></i>
         </button>
       </div>
@@ -81,7 +81,7 @@
         </div>
       </div>
     </div>
-    <div class="modalExampleWork">
+    <div v-if="modalData.img" class="modalExampleWork">
       <img :src="modalData.img" :alt="modalData.img">
     </div>
   </div>
@@ -112,7 +112,15 @@
 					try {
 						await store.dispatch('loadPort')
 						modalData.value = store.state.navbar.portfolio.portfolio.find(e => e.name === id)
-						exampleImg.value = modalData.value.imgDesc
+            if (modalData.value.imgDesc) {
+							exampleImg.value = modalData.value.imgDesc
+            } else if (modalData.value.imgTable) {
+							exampleImg.value = modalData.value.imgTable
+							isActive.value = 'Table'
+            } else {
+							exampleImg.value = modalData.value.imgMobile
+							isActive.value = 'Mobile'
+            }
 					} catch (e) {
 						error.value = true
 					} finally {
@@ -120,7 +128,15 @@
 					}
 				} else {
 					modalData.value = store.state.navbar.portfolio.portfolio.find(e => e.name === id)
-					exampleImg.value = modalData.value.imgDesc
+					if (modalData.value.imgDesc) {
+						exampleImg.value = modalData.value.imgDesc
+					} else if (modalData.value.imgTable) {
+						exampleImg.value = modalData.value.imgTable
+						isActive.value = 'Table'
+					} else {
+						exampleImg.value = modalData.value.imgMobile
+						isActive.value = 'Mobile'
+					}
 					loading.value = false
 				}
 			})

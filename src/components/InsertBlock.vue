@@ -18,7 +18,7 @@
 	import {ref} from 'vue'
 
 	export default {
-		props: ['title', 'desc'],
+		rops: ['title', 'desc'],
         setup() {
 			const insertBlock = ref(false)
 			const height = ref('height: auto; cursor: default')

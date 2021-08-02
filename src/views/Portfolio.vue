@@ -9,7 +9,7 @@
          @click="portfolioDetail(item)"
     >
       <div class="wrapperImg">
-        <img :src="item.img" :alt="item.img">
+        <img :src="item.imgDesc || item.imgTable || item.imgMobile" :alt="item.img">
       </div>
       <div class="innerTop">
         <div class="name">{{item.name}}</div>
@@ -78,21 +78,21 @@
     gap: 25px;
 
     .portfolio {
-      height: 350px;
       overflow: hidden;
       position: relative;
       font-family: $fontmenu;
       cursor: pointer;
       border-radius: 3px;
-      border-bottom: 3px solid #2d9687;
-
       .wrapperImg {
         width: 100%;
         height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       img {
-        width: 100%;
+        width: 140%;
       }
 
       .innerTop {
