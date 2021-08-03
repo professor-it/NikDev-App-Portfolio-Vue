@@ -9,7 +9,9 @@
          @click="portfolioDetail(item)"
     >
       <div class="wrapperImg">
-        <img :src="item.imgDesc || item.imgTable || item.imgMobile" :alt="item.img">
+        <img :src="item.imgDesc || item.imgTable || item.imgMobile"
+             :alt="item.img"
+        >
       </div>
       <div class="innerTop">
         <div class="name">{{item.name}}</div>
@@ -83,6 +85,7 @@
       font-family: $fontmenu;
       cursor: pointer;
       border-radius: 3px;
+      height: 280px;
       .wrapperImg {
         width: 100%;
         height: 100%;
@@ -92,7 +95,7 @@
       }
 
       img {
-        width: 140%;
+        height: 100%;
       }
 
       .innerTop {
