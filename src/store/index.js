@@ -602,7 +602,7 @@ export default createStore({
         },
         linkedin: {
           icon: 'fab fa-linkedin',
-          url: 'https://www.linkedin.com/in/dnikolaenko/'
+          url: 'https://www.linkedin.com/in/dmnikolaenko/'
         }
       },
       nameSite: 'Dima Nikolaenko',

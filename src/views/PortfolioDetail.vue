@@ -107,7 +107,6 @@
 			const isActive = ref('Desc')
 
 			onMounted(async () => {
-				console.log('ss')
 				if (store.state.navbar.portfolio.portfolio.length === 0) {
 					try {
 						await store.dispatch('loadPort')
@@ -386,11 +385,6 @@
         height: 300px;
         display: flex;
         align-items: center;
-
-        img {
-          height: 100%;
-          margin: 0 auto;
-        }
       }
     }
     .taskMain {

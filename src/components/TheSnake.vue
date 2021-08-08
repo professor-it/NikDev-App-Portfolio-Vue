@@ -362,12 +362,12 @@
         &__title2 {
           margin: 15px 0;
           font-size: 20px;
-          color: #ff2bab;
+          color: #fff;
         }
 
         &__desc {
           font-size: 14px;
-          color: #38d2bb;
+          color: #fff;
           line-height: 20px;
         }
       }
